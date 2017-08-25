@@ -69,4 +69,35 @@ class Transaction
     SqlRunner.run(sql, values)
   end
 
+  def which_merchant()
+    sql = '
+    SELECT * FROM merchants
+    WHERE id = $1'
+    values = [@merchant_id]
+    merchant = SqlRunner.run(sql, values)
+    result = Merchant.new(merchant.first)
+    return result
+  end
+
+  def which_tag()
+    sql = '
+    SELECT * FROM tags
+    WHERE id = $1'
+    values = [@tag_id]
+    tag = SqlRunner.run(sql, values)
+    result = Tag.new(tag.first)
+    return result
+  end
+
+  def self.total()
+    sql = '
+    SELECT SUM(value)
+    FROM transactions'
+    values = []
+    result = SqlRunner.run(sql, values).first['sum'].to_f
+    return result
+  end
+
+
+
 end

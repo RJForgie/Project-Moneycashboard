@@ -1,6 +1,10 @@
 require_relative('../models/tag')
 require_relative('../models/transaction')
 require_relative('../models/merchant')
+require_relative('../models/accountsettings')
+
+accountsettings1 = AccountSettings.new('budget_limit' => 150.00)
+accountsettings1.save
 
 tag1 = Tag.new({'name' => 'Food'})
 tag2 = Tag.new({'name' => 'Clothes'})

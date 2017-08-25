@@ -30,5 +30,17 @@ class Tag
     Sqlrunner.run(sql, values)
   end
 
+  def transaction_total()
+    sql = '
+    SELECT SUM(value)
+    FROM transactions
+    WHERE tag_id = $1'
+    values = [@id]
+    result = SqlRunner.run(sql, values).first['sum'].to_f
+    return result
+  end
+
+
+
 
 end

@@ -1,0 +1,12 @@
+<h1>All transactions</h1>
+
+<% for transaction in @transactions %>
+
+<p>Value: <%= transaction.value%></p>
+<p>Merchant: <%= transaction.which_merchant.name%></p>
+<p>Date: <%= transaction.transaction_date %></p>
+<p>Tag: <%= transaction.which_tag.name %></p>
+
+<% end %>
+
+<p>Total: <%= @total %></p>

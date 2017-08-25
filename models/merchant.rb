@@ -22,4 +22,22 @@ class Merchant
     @id = tag_data.first['id'].to_i()
   end
 
+  def update()
+    sql = '
+    UPDATE merchant SET (name) = $1
+    WHERE id = $2'
+    values = [@name, @id]
+    Sqlrunner.run(sql, values)
+  end
+
+  def transaction_total()
+    sql = '
+    SELECT SUM(value)
+    FROM transactions
+    WHERE merchant_id = $1'
+    values = [@id]
+    result = SqlRunner.run(sql, values).first['sum'].to_f
+    return result
+  end
+
 end
