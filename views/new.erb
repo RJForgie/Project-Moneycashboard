@@ -1,0 +1,28 @@
+<h1>Enter new transaction details</h1>
+
+<form action="/transactions" method="POST">
+
+<label for="value-field">Value:</label>
+<input id="value-field" type="float" name="value">
+
+<label for="merchant-select"> Select a Merchant:</label>
+<select id="merchant-select" name="merchant_id">
+  <% for merchant in @merchants do%>
+  <option value= <%= merchant.id %>><%= merchant.name %></option>
+  <% end %>
+</select>
+
+<label for="value-field">Date (YYYY-MM-DD): </label>
+<input id="value-field" type="date" name="transaction_date">
+
+<label for="tag-select"> Select a Tag:</label>
+<select id="tag-select" name="tag_id">
+  <% for tag in @tags do%>
+  <option value= <%= tag.id %>><%= tag.name %></option>
+  <% end %>
+</select>
+
+<input type="submit" class="button" value="Save transaction"/>
+
+
+</form>

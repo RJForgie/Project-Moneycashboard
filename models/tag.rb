@@ -30,6 +30,15 @@ class Tag
     Sqlrunner.run(sql, values)
   end
 
+  def self.all()
+    sql = '
+      SELECT * FROM tags'
+    values = []
+    tags = SqlRunner.run(sql, values)
+    result = Tag.map_items(tags)
+    return result
+  end
+
   def transaction_total()
     sql = '
     SELECT SUM(value)
@@ -38,6 +47,10 @@ class Tag
     values = [@id]
     result = SqlRunner.run(sql, values).first['sum'].to_f
     return result
+  end
+
+  def self.map_items(rows)
+    return rows.map {|row| Tag.new(row)}
   end
 
 

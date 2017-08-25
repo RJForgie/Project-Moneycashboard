@@ -18,16 +18,26 @@ class Merchant
       VALUES ($1)
       RETURNING *;'
     values = [@name]
-    tag_data = SqlRunner.run(sql, values)
-    @id = tag_data.first['id'].to_i()
+    merchant_data = SqlRunner.run(sql, values)
+    @id = merchant_data.first['id'].to_i()
   end
 
   def update()
     sql = '
-    UPDATE merchant SET (name) = $1
-    WHERE id = $2'
+      UPDATE merchant SET (name) = $1
+      WHERE id = $2'
     values = [@name, @id]
     Sqlrunner.run(sql, values)
+  end
+
+
+  def self.all()
+    sql = '
+      SELECT * FROM merchants'
+    values = []
+    merchants = SqlRunner.run(sql, values)
+    result = Merchant.map_items(merchants)
+    return result
   end
 
   def transaction_total()
@@ -38,6 +48,10 @@ class Merchant
     values = [@id]
     result = SqlRunner.run(sql, values).first['sum'].to_f
     return result
+  end
+
+  def self.map_items(rows)
+    return rows.map {|row| Merchant.new(row)}
   end
 
 end

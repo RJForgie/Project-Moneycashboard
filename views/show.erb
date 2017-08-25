@@ -1,0 +1,17 @@
+<h1>Transaction Details</h1>
+
+<p>Value: <%= @transaction.value %></p>
+
+<% for merchant in @merchants do %>
+  <% if merchant.id == @transaction.merchant_id %>
+ <p>Merchant: <%= merchant.name %></p>
+ <% end %>
+<% end %>
+
+<p>Date: <%= @transaction.transaction_date %></p>
+
+<% for tag in @tags do %>
+  <% if tag.id == @transaction.tag_id %>
+    <p>Tag: <%= tag.name %></p>
+  <% end %>
+<% end %>

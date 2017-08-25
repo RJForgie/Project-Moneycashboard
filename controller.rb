@@ -24,9 +24,9 @@ end
 
 #NEW route
 
-get 'transactions/new' do
+get '/transactions/new' do
   @merchants = Merchant.all
-  @tags = Tags.all
+  @tags = Tag.all
   erb(:new)
 end
 
@@ -41,7 +41,7 @@ end
 
 #CREATE route
 
-get '/transactions' do
+post '/transactions' do
   @transaction = Transaction.new(params)
   @transaction.save
   erb(:create)
