@@ -1,5 +1,5 @@
 <h1>Edit transaction details</h1>
-<form class="" action="/transactions/<% @transaction.id %>" method="POST">
+<form action="/transactions/<%= @transaction.id %>" method="POST">
 
   <label for="value-field">Value:</label>
   <input id="value-field" type="float" name="value" value="<%= @transaction.value %>">
@@ -29,6 +29,8 @@
      <% end %>
      <% end %>
   </select>
+
+  <input type="submit" class="button" value="Save changes"/>
 
 
 </form>

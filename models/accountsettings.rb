@@ -8,9 +8,8 @@ class AccountSettings
 
   def initialize(details)
     @id = details['id'].to_i
-    @budget_limit = details['budget_limit']
+    @budget_limit = details['budget_limit'].to_f
   end
-
 
   def save()
     sql = '
@@ -21,6 +20,15 @@ class AccountSettings
     values = [@budget_limit]
     tag_data = SqlRunner.run(sql, values)
     @id = tag_data.first['id'].to_i()
+  end
+
+  def self.find(id)
+    sql = '
+      SELECT * FROM accountsettings WHERE id = $1'
+    values = [id]
+    accountsetting = SqlRunner.run(sql, values)
+    result = AccountSettings.new(accountsetting.first)
+    return result
   end
 
 end

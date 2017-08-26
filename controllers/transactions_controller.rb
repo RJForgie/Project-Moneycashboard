@@ -1,18 +1,12 @@
 require('sinatra')
 require('sinatra/contrib/all')
 require('pry-byebug')
-require_relative('./models/tag.rb')
-require_relative('./models/transaction.rb')
-require_relative('./models/merchant.rb')
+require_relative('../models/tag.rb')
+require_relative('../models/transaction.rb')
+require_relative('../models/merchant.rb')
+require_relative('../models/accountsettings.rb')
 # also_reload('.models/*')
 
-
-
-#HOMEPAGE route
-
-get '/' do
-  erb(:home)
-end
 
 #INDEX route
 
@@ -21,8 +15,10 @@ get '/transactions' do
   puts @transactions
   @total = Transaction.total()
   @april = Transaction.total_by_month(4)
+  @tags = Tag.all()
+  @accountsettings = AccountSettings.find(1)
 
-  erb(:index)
+  erb(:"transactions/index")
 end
 
 #NEW route
@@ -30,16 +26,16 @@ end
 get '/transactions/new' do
   @merchants = Merchant.all
   @tags = Tag.all
-  erb(:new)
+  erb(:"transactions/new")
 end
 
 #SHOW route
 
 get '/transactions/:id' do
-  @transaction = Transaction.find(params[:id])
+  @transaction = Transaction.find( params[:id] )
   @merchants = Merchant.all()
   @tags = Tag.all()
-  erb(:show)
+  erb(:"transactions/show")
 end
 
 #CREATE route
@@ -47,13 +43,13 @@ end
 post '/transactions' do
   @transaction = Transaction.new(params)
   @transaction.save()
-  erb(:create)
+  erb(:"transactions/create")
 end
 
 #DELETE route
 post '/transactions/:id/delete' do
   Transaction.delete(params[:id])
-  redirect to '/transactions'
+  redirect to "/transactions"
 end
 
 #EDIT route
@@ -61,12 +57,12 @@ get '/transactions/:id/edit' do
   @merchants = Merchant.all()
   @tags = Tag.all()
   @transaction = Transaction.find(params[:id])
-  erb(:edit)
+  erb(:"transactions/edit")
 end
 
 #UPDATE route
 post '/transactions/:id' do
   transaction = Transaction.new(params)
   transaction.update()
-  redirect to "/transactions/#{params[:id]}"
+  redirect to "/transactions/#{params['id']}"
 end
