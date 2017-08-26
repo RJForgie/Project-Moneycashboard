@@ -1,0 +1,34 @@
+<h1>Edit transaction details</h1>
+<form class="" action="/transactions/<% @transaction.id %>" method="POST">
+
+  <label for="value-field">Value:</label>
+  <input id="value-field" type="float" name="value" value="<%= @transaction.value %>">
+
+  <label for="merchant-select">Select a merchant:</label>
+  <select id="merchant-select" name="merchant_id">
+     <% for merchant in @merchants do %>
+     <% if merchant.id == @transaction.merchant_id %>
+     <option value= <%= merchant.id %> selected><%= merchant.name %></option>
+     <% else %>
+     <option value= <%= merchant.id %>><%= merchant.name %></option>
+     <% end %>
+     <% end %>
+  </select>
+
+
+  <label for="transaction-date-field">Date:</label>
+  <input id="transaction-date-field" type="date" name="transaction_date" value="<%= @transaction.transaction_date %>">
+
+  <label for="tag-select">Select a tag:</label>
+  <select id="tag-select" name="tag_id">
+     <% for tag in @tags do %>
+     <% if tag.id == @transaction.tag_id %>
+     <option value= <%= tag.id %> selected><%= tag.name %></option>
+     <% else %>
+     <option value= <%= tag.id %>><%= tag.name %></option>
+     <% end %>
+     <% end %>
+  </select>
+
+
+</form>

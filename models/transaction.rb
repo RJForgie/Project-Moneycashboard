@@ -64,15 +64,15 @@ class Transaction
   end
 
   def self.delete(id)
-    sql = 'DELETE FROM customers WHERE id = $1;'
+    sql = 'DELETE FROM transactions WHERE id = $1;'
     values = [id]
     SqlRunner.run(sql, values)
   end
 
   def which_merchant()
     sql = '
-    SELECT * FROM merchants
-    WHERE id = $1'
+      SELECT * FROM merchants
+      WHERE id = $1'
     values = [@merchant_id]
     merchant = SqlRunner.run(sql, values)
     result = Merchant.new(merchant.first)
@@ -81,8 +81,8 @@ class Transaction
 
   def which_tag()
     sql = '
-    SELECT * FROM tags
-    WHERE id = $1'
+      SELECT * FROM tags
+      WHERE id = $1'
     values = [@tag_id]
     tag = SqlRunner.run(sql, values)
     result = Tag.new(tag.first)
@@ -91,13 +91,29 @@ class Transaction
 
   def self.total()
     sql = '
-    SELECT SUM(value)
-    FROM transactions'
+      SELECT SUM(value)
+      FROM transactions'
     values = []
     result = SqlRunner.run(sql, values).first['sum'].to_f
     return result
   end
 
+  def self.total_by_month(month)
+    sql = '
+    SELECT SUM(value), EXTRACT(MONTH from transaction_date)
+    FROM transactions
+    WHERE EXTRACT(MONTH from transaction_date) = $1
+    GROUP BY EXTRACT(MONTH from transaction_date)'
+    values = [month]
+    result = SqlRunner.run(sql,values).first['sum'].to_f
+    return result
+  end
 
+  # SELECT
+  #  EXTRACT(MONTH FROM transaction_date) AS reference_month,
+  #  SUM(value) AS monthly_total
+  #  FROM transactions
+  #  WHERE EXTRACT(MONTH FROM transaction_date) = $1
+  #  GROUP BY EXTRACT(MONTH FROM transaction_date)
 
 end

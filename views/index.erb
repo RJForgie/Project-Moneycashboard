@@ -7,8 +7,17 @@
 <p>Date: <%= transaction.transaction_date %></p>
 <p>Tag: <%= transaction.which_tag.name %></p>
 
+<form action="/transactions/<%= transaction.id %>/edit" method="get">
+  <input type="submit" class="button" value="Edit Transaction"/>
+</form>
+
+<form action="/transactions/<%= transaction.id %>/delete" method="POST">
+  <input type="submit" class="button" value="Remove transaction"/>
+</form>
+
 <hr/>
 <% end %>
 
+<p>April: <%= @april %></p>
 
 <p>Total: <%= @total %></p>
