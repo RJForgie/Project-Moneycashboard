@@ -23,8 +23,31 @@
 <hr/>
 <% end %>
 
-<p>April: <%= @april %></p>
+<% for merchant in @merchants%>
+<p><%= merchant.name %> : <%= merchant.transaction_total %> </p>
+<hr/>
+<% end %>
+
+
+<p>January: <%=@january %></p>
+<p>February: <%=@february %></p>
+<p>March: <%=@march %></p>
+<p>April: <%=@april%></p>
+<p>May: <%=@may %></p>
+<p>June: <%=@june %></p>
+<p>July: <%=@july %></p>
+<p>August: <%=@august %></p>
+<p>September: <%=@september %></p>
+<p>October: <%=@october %></p>
+<p>November: <%=@november %></p>
+<p>December: <%=@december %></p>
+
+
 
 <p>Total: <%= @total %></p>
 
 <p>Budget: <%= @accountsettings.budget_limit %> </p>
+
+<% if @accountsettings.budget_limit < @total %>
+<p>Warning! Budget exceeded.</p>
+<% end %>

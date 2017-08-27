@@ -13,10 +13,21 @@ require_relative('../models/accountsettings.rb')
 get '/transactions' do
   @transactions = Transaction.all()
   @total = Transaction.total()
-  @april = Transaction.total_by_month(4)
   @tags = Tag.all()
+  @merchants = Merchant.all()
   @accountsettings = AccountSettings.find(1)
-
+  @january = Transaction.total_by_month(1)
+  @february = Transaction.total_by_month(2)
+  @march = Transaction.total_by_month(3)
+  @april = Transaction.total_by_month(4)
+  @may = Transaction.total_by_month(5)
+  @june = Transaction.total_by_month(6)
+  @july = Transaction.total_by_month(7)
+  @august = Transaction.total_by_month(8)
+  @september = Transaction.total_by_month(9)
+  @october = Transaction.total_by_month(10)
+  @november = Transaction.total_by_month(11)
+  @december = Transaction.total_by_month(12)
   erb(:"transactions/index")
 end
 
