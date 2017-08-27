@@ -1,0 +1,15 @@
+<h1>Budget settings</h1>
+
+
+<p><%= @accountsettings.budget_limit %></p>
+<hr/>
+
+
+<h1>Update budget</h1>
+
+<form action="/accountsettings/<%= @accountsettings.id %>" method="POST">
+
+<label for="budget-limit-field">New budget: </label>
+<input id="budget-limit-field" type="float" name="budget_limit">
+
+<input type="submit" class="button" value="Save changes"/>
