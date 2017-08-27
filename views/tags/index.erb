@@ -1,0 +1,15 @@
+<h1>All tags</h1>
+
+<% for tag in @tags %>
+<p><%= tag.name %></p>
+<hr/>
+<% end %>
+
+<h1>Enter new tag details</h1>
+
+<form action="/tags" method="POST">
+
+<label for="tag-field">Tag Name:</label>
+<input id="tag-field" type="text" name="name">
+
+<input type="submit" class="button" value="Save tag"/>

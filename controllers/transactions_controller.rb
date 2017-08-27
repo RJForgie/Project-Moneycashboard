@@ -12,7 +12,6 @@ require_relative('../models/accountsettings.rb')
 
 get '/transactions' do
   @transactions = Transaction.all()
-  puts @transactions
   @total = Transaction.total()
   @april = Transaction.total_by_month(4)
   @tags = Tag.all()

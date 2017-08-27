@@ -39,6 +39,21 @@ class Tag
     return result
   end
 
+  def self.find(id)
+    sql = '
+      SELECT * FROM tags WHERE id = $1'
+    values = [id]
+    tag = SqlRunner.run(sql, values)
+    result = Tag.new(tag.first)
+    return result
+  end
+
+  def self.delete(id)
+    sql = 'DELETE FROM tags WHERE id = $1;'
+    values = [id]
+    SqlRunner.run(sql, values)
+  end
+
   def transaction_total()
     sql = '
     SELECT SUM(value)

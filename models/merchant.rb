@@ -30,7 +30,6 @@ class Merchant
     Sqlrunner.run(sql, values)
   end
 
-
   def self.all()
     sql = '
       SELECT * FROM merchants'
@@ -38,6 +37,21 @@ class Merchant
     merchants = SqlRunner.run(sql, values)
     result = Merchant.map_items(merchants)
     return result
+  end
+
+  def self.find(id)
+    sql = '
+      SELECT * FROM merchants WHERE id = $1'
+    values = [id]
+    merchant = SqlRunner.run(sql, values)
+    result = Merchant.new(merchant.first)
+    return result
+  end
+
+  def self.delete(id)
+    sql = 'DELETE FROM merchants WHERE id = $1;'
+    values = [id]
+    SqlRunner.run(sql, values)
   end
 
   def transaction_total()

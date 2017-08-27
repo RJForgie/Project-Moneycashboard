@@ -1,0 +1,15 @@
+<h1>All merchants</h1>
+
+<% for merchant in @merchants %>
+<p><%= merchant.name %></p>
+<hr/>
+<% end %>
+
+<h1>Enter new merchant details</h1>
+
+<form action="/merchants" method="POST">
+
+<label for="merchant-field">Tag Name:</label>
+<input id="merchant-field" type="text" name="name">
+
+<input type="submit" class="button" value="Save merchant"/>
