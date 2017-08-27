@@ -112,11 +112,15 @@ class Transaction
       end
   end
 
-  # SELECT
-  #  EXTRACT(MONTH FROM transaction_date) AS reference_month,
-  #  SUM(value) AS monthly_total
-  #  FROM transactions
-  #  WHERE EXTRACT(MONTH FROM transaction_date) = $1
-  #  GROUP BY EXTRACT(MONTH FROM transaction_date)
+  # def self.total_by_month()
+  #   sql = '
+  #     SELECT SUM(value), EXTRACT(MONTH from transaction_date)
+  #     FROM transactions
+  #     GROUP BY EXTRACT(MONTH from transaction_date)'
+  #   values = []
+  #   result = SqlRunner.run(sql,values)
+  #   return result['datepart' => '4']
+  # end
+
 
 end
