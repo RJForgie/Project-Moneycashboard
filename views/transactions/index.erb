@@ -1,5 +1,13 @@
 <h1>All transactions</h1>
 
+<ul id="budget-display">
+  <li>Total: <%= sprintf("%.2f", @total) %></li>
+  <li>Budget: <%= sprintf("%.2f", @accountsettings.budget_limit) %></li>
+  <li>
+    <% "Warning, budget exceeded!" if @accountsettings.budget_limit < @total %>
+  </li>
+</ul>
+
 <table id="newtable">
 
   <tr>
@@ -14,8 +22,8 @@
 <% for transaction in @transactions %>
 
 <tr>
-<td><%= transaction.value%></td>
-<td><%= transaction.which_merchant.name%></td>
+<td>£<%= sprintf("%.2f", transaction.value) %></td>
+<td><%= transaction.which_merchant.name %></td>
 <td><%= transaction.transaction_date %></td>
 <td><%= transaction.which_tag.name %></td>
 
@@ -45,7 +53,7 @@
     <% for tag in @tags%>
       <tr>
         <td><%= tag.name %></td>
-        <td><%= tag.transaction_total %></td>
+        <td>£<%= sprintf("%.2f", tag.transaction_total) %></td>
       </tr>
     <% end %>
 
@@ -67,7 +75,7 @@
         <% for merchant in @merchants%>
         <tr>
           <td><%= merchant.name %></td>
-          <td><%= merchant.transaction_total %></td>
+          <td>£<%= sprintf("%.2f", merchant.transaction_total) %></td>
         </tr>
         <% end %>
       </table>
@@ -88,7 +96,7 @@
         <% for month in @months%>
         <tr>
           <td><%= month.month_name %></td>
-          <td><%= month.total %></td>
+          <td>£<%= sprintf("%.2f", month.total) %></td>
         </tr>
         <% end %>
       </table>
@@ -98,7 +106,7 @@
 
 <p>Total: <%= @total %></p>
 
-<p>Budget: <%= @accountsettings.budget_limit %> </p>
+<p>Budget: <%= sprintf("%.2f", @accountsettings.budget_limit) %> </p>
 
 <% if @accountsettings.budget_limit < @total %>
 <p>Warning! Budget exceeded.</p>

@@ -1,13 +1,21 @@
 <h1>All tags</h1>
 
-<% for tag in @tags %>
-<p><%= tag.name %></p>
-<hr/>
+<table id="newtable">
+  <tr>
+    <th>Tags</th>
+  </tr>
+
+<% for tag in @tags%>
+ <tr>
+   <td><%= tag.name %></td>
+ </tr>
 <% end %>
+</table>
+
 
 <h1>Enter new tag details</h1>
 
-<form action="/tags" method="POST">
+<form action="/tags/new" method="POST">
 
 <label for="tag-field">Tag Name:</label>
 <input id="tag-field" type="text" name="name">

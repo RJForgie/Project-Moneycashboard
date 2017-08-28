@@ -15,7 +15,7 @@ CREATE TABLE merchants (
 
 CREATE TABLE accountsettings (
   id SERIAL PRIMARY KEY,
-  budget_limit DECIMAL(7,2) not null
+  budget_limit NUMERIC(8,2) not null
 );
 
 CREATE TABLE transactions (

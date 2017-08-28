@@ -2,7 +2,7 @@
 
 <form action="/transactions" method="POST">
 
-<label for="value-field">Value:</label>
+<label for="value-field">Value: £</label>
 <input id="value-field" type="number" name="value" step="0.01" required>
 
 <label for="merchant-select"> Select a Merchant:</label>
@@ -25,10 +25,10 @@
 <input type="submit" class="button" value="Save transaction"/>
 </form>
 
-<form method="get" action="/merchants/create">
+<form method="GET" action="/merchants/new">
     <button class="button" type="submit">Create new Merchant</button>
 </form>
 
-<form method="POST" action="/tags">
+<form method="GET" action="/tags/new">
     <button class="button" type="submit">Create new Tag</button>
 </form>

@@ -1,13 +1,22 @@
 <h1>All merchants</h1>
 
-<% for merchant in @merchants %>
-<p><%= merchant.name %></p>
-<hr/>
+
+<table id="newtable">
+  <tr>
+    <th>Merchants</th>
+  </tr>
+
+<% for merchant in @merchants%>
+ <tr>
+   <td><%= merchant.name %></td>
+ </tr>
 <% end %>
+</table>
+
 
 <h1>Enter new merchant details</h1>
 
-<form action="/merchants/create" method="POST">
+<form action="/merchants/new" method="POST">
 
 <label for="merchant-field">Tag Name:</label>
 <input id="merchant-field" type="text" name="name">

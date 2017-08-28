@@ -1,7 +1,7 @@
 <h1>Edit transaction details</h1>
 <form action="/transactions/<%= @transaction.id %>" method="POST">
 
-  <label for="value-field">Value:</label>
+  <label for="value-field">Value: £</label>
   <input id="value-field" type="float" name="value" value="<%= @transaction.value %>" step="0.01" required>
 
   <label for="merchant-select">Select a merchant:</label>

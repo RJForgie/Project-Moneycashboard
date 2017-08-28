@@ -9,15 +9,15 @@ require_relative('../models/accountsettings.rb')
 
 #INDEX route
 
-get '/tags' do
+get '/tags/new' do
   @tags = Tag.all()
-  erb(:"tags/index")
+  erb(:"tags/new")
 end
 
-#CREATE route
+#NEW route
 
-post '/tags' do
+post '/tags/new' do
   @tag = Tag.new(params)
   @tag.save()
-  redirect to "/tags"
+  redirect to "/tags/new"
 end

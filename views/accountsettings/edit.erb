@@ -1,8 +1,8 @@
 <h1>Budget settings</h1>
 
 
-<p><%= @accountsettings.budget_limit %></p>
-<hr/>
+<p>£<%= sprintf("%.2f",@accountsettings.budget_limit) %></p>
+
 
 
 <h1>Update budget</h1>
@@ -13,3 +13,11 @@
 <input id="budget-limit-field" type="float" name="budget_limit">
 
 <input type="submit" class="button" value="Save changes"/>
+
+<form method="GET" action="/merchants/new">
+    <button class="button" type="submit">Create new Merchant</button>
+</form>
+
+<form method="GET" action="/tags/new">
+    <button class="button" type="submit">Create new Tag</button>
+</form>
