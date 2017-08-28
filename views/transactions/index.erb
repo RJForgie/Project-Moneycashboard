@@ -3,9 +3,9 @@
 <ul id="budget-display">
   <li>Total: <%= sprintf("%.2f", @total) %></li>
   <li>Budget: <%= sprintf("%.2f", @accountsettings.budget_limit) %></li>
-  <li>
-    <% "Warning, budget exceeded!" if @accountsettings.budget_limit < @total %>
-  </li>
+  <% if @accountsettings.budget_limit < @total %>
+  <li>Warning! Budget exceeded.</li>
+  <% end %>
 </ul>
 
 <table id="newtable">
@@ -102,12 +102,3 @@
       </table>
     </div>
 </div>
-
-
-<p>Total: <%= @total %></p>
-
-<p>Budget: <%= sprintf("%.2f", @accountsettings.budget_limit) %> </p>
-
-<% if @accountsettings.budget_limit < @total %>
-<p>Warning! Budget exceeded.</p>
-<% end %>
