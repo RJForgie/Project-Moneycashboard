@@ -15,13 +15,13 @@ CREATE TABLE merchants (
 
 CREATE TABLE accountsettings (
   id SERIAL PRIMARY KEY,
-  budget_limit DECIMAL(7,2)
+  budget_limit DECIMAL(7,2) not null
 );
 
 CREATE TABLE transactions (
   id SERIAL PRIMARY KEY,
-  value DECIMAL(7,2),
+  value DECIMAL(7,2) not null,
   merchant_id INT REFERENCES merchants(id),
-  transaction_date DATE,
+  transaction_date DATE not null,
   tag_id INT REFERENCES tags(id)
 );

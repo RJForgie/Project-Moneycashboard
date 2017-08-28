@@ -3,7 +3,7 @@
 <form action="/transactions" method="POST">
 
 <label for="value-field">Value:</label>
-<input id="value-field" type="float" name="value">
+<input id="value-field" type="number" name="value" step="0.01" required>
 
 <label for="merchant-select"> Select a Merchant:</label>
 <select id="merchant-select" name="merchant_id">
@@ -13,7 +13,7 @@
 </select>
 
 <label for="value-field">Date: </label>
-<input id="value-field" type="date" name="transaction_date">
+<input id="value-field" type="date" name="transaction_date" required>
 
 <label for="tag-select"> Select a Tag:</label>
 <select id="tag-select" name="tag_id">
@@ -23,6 +23,12 @@
 </select>
 
 <input type="submit" class="button" value="Save transaction"/>
+</form>
 
+<form method="POST" action="/merchants">
+    <button class="button" type="submit">Create new Merchant</button>
+</form>
 
+<form method="POST" action="/tags">
+    <button class="button" type="submit">Create new Tag</button>
 </form>

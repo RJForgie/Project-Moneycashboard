@@ -2,7 +2,7 @@
 <form action="/transactions/<%= @transaction.id %>" method="POST">
 
   <label for="value-field">Value:</label>
-  <input id="value-field" type="float" name="value" value="<%= @transaction.value %>">
+  <input id="value-field" type="float" name="value" value="<%= @transaction.value %>" step="0.01" required>
 
   <label for="merchant-select">Select a merchant:</label>
   <select id="merchant-select" name="merchant_id">
@@ -31,6 +31,4 @@
   </select>
 
   <input type="submit" class="button" value="Save changes"/>
-
-
 </form>
