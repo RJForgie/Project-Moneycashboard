@@ -9,15 +9,15 @@ require_relative('../models/accountsettings.rb')
 
 #INDEX route
 
-get '/merchants' do
+get '/merchants/create' do
   @merchants = Merchant.all()
-  erb(:"merchants/index")
+  erb(:"merchants/create")
 end
 
 #CREATE route
 
-post '/merchants' do
+post '/merchants/create' do
   @merchant = Merchant.new(params)
   @merchant.save()
-  redirect to "/merchants"
+  redirect to :"/merchants/create"
 end
