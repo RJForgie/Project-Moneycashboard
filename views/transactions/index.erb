@@ -30,54 +30,70 @@
 </tr>
 <% end %>
 
-
-<table id="newtable">
-
-  <tr>
-    <th>Tag</th>
-    <th>Total</th>
-  </tr>
-
-<% for tag in @tags%>
-  <tr>
-   <td><%= tag.name %></td>
-   <td><%= tag.transaction_total %></td>
- </tr>
- <% end %>
-
- </table>
-
-
- <table id="newtable">
-
-   <tr>
-     <th>Merchant</th>
-     <th>Total</th>
-   </tr>
-
-<% for merchant in @merchants%>
-  <tr>
-    <td><%= merchant.name %></td>
-    <td><%= merchant.transaction_total %></td>
-  </tr>
-<% end %>
-
 </table>
 
+<div>
+   <label for="item-1">Toggle Div</label>
+   <input type="checkbox" name="one" id="item-1">
+   <div class="hide">
+     <table id="newtable">
+       <tr>
+         <th>Tag</th>
+         <th>Total</th>
+       </tr>
 
-<p>January: <%=@january %></p>
-<p>February: <%=@february %></p>
-<p>March: <%=@march %></p>
-<p>April: <%=@april%></p>
-<p>May: <%=@may %></p>
-<p>June: <%=@june %></p>
-<p>July: <%=@july %></p>
-<p>August: <%=@august %></p>
-<p>September: <%=@september %></p>
-<p>October: <%=@october %></p>
-<p>November: <%=@november %></p>
-<p>December: <%=@december %></p>
+    <% for tag in @tags%>
+      <tr>
+        <td><%= tag.name %></td>
+        <td><%= tag.transaction_total %></td>
+      </tr>
+    <% end %>
 
+    </table>
+  </div>
+</div>
+
+ <div>
+ 		<label for="item-1">Toggle Div</label>
+ 		<input type="checkbox" name="one" id="item-1">
+ 		<div class="hide">
+      <table id="newtable">
+
+        <tr>
+          <th>Merchant</th>
+          <th>Total</th>
+        </tr>
+
+        <% for merchant in @merchants%>
+        <tr>
+          <td><%= merchant.name %></td>
+          <td><%= merchant.transaction_total %></td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+</div>
+
+<div>
+		<label for="item-1">Toggle Div</label>
+		<input type="checkbox" name="one" id="item-1">
+		<div class="hide">
+
+      <table id="newtable">
+        <tr>
+          <th>Month</th>
+          <th>Total</th>
+        </tr>
+
+        <% for month in @months%>
+        <tr>
+          <td><%= month.month_name %></td>
+          <td><%= month.total %></td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+</div>
 
 
 <p>Total: <%= @total %></p>

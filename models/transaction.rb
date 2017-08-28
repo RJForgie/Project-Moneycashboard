@@ -98,19 +98,19 @@ class Transaction
     return result
   end
 
-  def self.total_by_month(month)
-    sql = '
-      SELECT SUM(value), EXTRACT(MONTH from transaction_date)
-      FROM transactions
-      WHERE EXTRACT(MONTH from transaction_date) = $1
-      GROUP BY EXTRACT(MONTH from transaction_date)'
-    values = [month]
-    result = SqlRunner.run(sql,values)
-      if result.to_a.empty? then return 0.0
-      else
-        return result.first['sum'].to_f
-      end
-  end
+  # def self.total_by_month(month)
+  #   sql = '
+  #     SELECT SUM(value) AS total, EXTRACT(MONTH from transaction_date) AS month
+  #     FROM transactions
+  #     WHERE EXTRACT(MONTH from transaction_date) = $1
+  #     GROUP BY EXTRACT(MONTH from transaction_date)'
+  #   values = [month]
+  #   result = SqlRunner.run(sql,values)
+  #     if result.to_a.empty? then return 0.0
+  #     else
+  #       return result.first['sum'].to_f
+  #     end
+  # end
 
   # def self.total_by_month()
   #   sql = '

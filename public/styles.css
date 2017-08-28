@@ -54,3 +54,22 @@ li a:hover:not(.active) {
     background-color: #555;
     color: white;
 }
+
+
+.hide {
+	opacity:1;
+	height:auto;
+	overflow:hidden;
+	transition:opacity 1.5s linear, max-height 1.5s linear;
+}
+.hide p {
+	padding:10px;
+	margin:0;
+}
+input[type=checkbox]:checked + div {
+	opacity:0;
+	max-height:0;
+	border:none;
+
+}
+.follow{border-top:1px solid blue;margin:0}
