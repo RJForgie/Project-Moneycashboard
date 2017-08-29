@@ -9,15 +9,25 @@ require_relative('../models/month.rb')
 also_reload("..models/*")
 
 
-#INDEX route
+  #INDEX route
+
   get '/transactions' do
     @transactions = Transaction.all()
     @total = Transaction.total()
     @tags = Tag.all()
     @merchants = Merchant.all()
     @accountsettings = AccountSettings.find(1)
-    @months = Month.total_by_month
+    @months = Month.total_by_month()
     erb(:"transactions/index")
+  end
+
+  #REPORTS route
+  get '/transactions/reports' do
+    @tags = Tag.all()
+    @merchants = Merchant.all()
+    @months = Month.total_by_month()
+    @transactions = Transaction.all()
+    erb(:"transactions/reports")
   end
 
   #NEW route

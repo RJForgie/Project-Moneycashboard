@@ -1,10 +1,17 @@
 <h1>All transactions</h1>
 
 <ul id="budget-display">
+  <span style="display:block; height: 120px;"></span>
   <li>Total: <%= sprintf("%.2f", @total) %></li>
+  <hr width="70%">
+  <span style="display:block; height: 10px;"></span>
   <li>Budget: <%= sprintf("%.2f", @accountsettings.budget_limit) %></li>
+  <hr width="70%">
+  <span style="display:block; height: 10px;"></span>
   <% if @accountsettings.budget_limit < @total %>
-  <li>Warning! Budget exceeded.</li>
+  <div class="alert">
+  Warning! Budget exceeded.
+</div>
   <% end %>
 </ul>
 
@@ -39,66 +46,3 @@
 <% end %>
 
 </table>
-
-<div>
-   <label for="item-1">Tag Totals</label>
-   <input type="checkbox" name="one" id="item-1" checked="checked">
-   <div class="hide">
-     <table id="newtable">
-       <tr>
-         <th>Tag</th>
-         <th>Total</th>
-       </tr>
-
-    <% for tag in @tags%>
-      <tr>
-        <td><%= tag.name %></td>
-        <td>£<%= sprintf("%.2f", tag.transaction_total) %></td>
-      </tr>
-    <% end %>
-
-    </table>
-  </div>
-</div>
-
- <div>
- 		<label for="item-1">Merchant Totals</label>
- 		<input type="checkbox" name="one" id="item-1" checked="checked">
- 		<div class="hide">
-      <table id="newtable">
-
-        <tr>
-          <th>Merchant</th>
-          <th>Total</th>
-        </tr>
-
-        <% for merchant in @merchants%>
-        <tr>
-          <td><%= merchant.name %></td>
-          <td>£<%= sprintf("%.2f", merchant.transaction_total) %></td>
-        </tr>
-        <% end %>
-      </table>
-    </div>
-</div>
-
-<div>
-		<label for="item-1">Month Totals</label>
-		<input type="checkbox" name="one" id="item-1" checked="checked">
-		<div class="hide">
-
-      <table id="newtable">
-        <tr>
-          <th>Month</th>
-          <th>Total</th>
-        </tr>
-
-        <% for month in @months%>
-        <tr>
-          <td><%= month.month_name %></td>
-          <td>£<%= sprintf("%.2f", month.total) %></td>
-        </tr>
-        <% end %>
-      </table>
-    </div>
-</div>
