@@ -68,6 +68,12 @@ class Tag
     return rows.map {|row| Tag.new(row)}
   end
 
+  def self.names()
+    tags = Tag.all
+    names = tags.map {|tags| tags.name}
+    return names
+  end
+
 
 
 

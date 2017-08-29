@@ -17,7 +17,8 @@ end
 #NEW route
 
 post '/merchants/new' do
+  merchants = Merchant.names
   @merchant = Merchant.new(params)
-  @merchant.save()
+  @merchant.save() unless merchants.include? @merchant.name
   redirect to :"/merchants/new"
 end

@@ -24,10 +24,16 @@ tag6.save
 merchant1 = Merchant.new({'name' => 'Asda'})
 merchant2 = Merchant.new({'name' => 'Attic'})
 merchant3 = Merchant.new({'name' => 'Scotrail'})
+merchant4 = Merchant.new({'name' => 'Scottish Gas'})
+merchant5 = Merchant.new({'name' => 'Edinburgh Cabs'})
+merchant6 = Merchant.new({'name' => 'Landlord'})
 
 merchant1.save
 merchant2.save
 merchant3.save
+merchant4.save
+merchant5.save
+merchant6.save
 
 
 transaction1 = Transaction.new({
@@ -51,6 +57,23 @@ transaction3 = Transaction.new({
   'tag_id' => tag3.id
   })
 
+transaction4 = Transaction.new({
+  'value' => 18.80,
+  'merchant_id' => merchant5.id,
+  'transaction_date' => '2017-04-10',
+  'tag_id' => tag3.id
+  })
+
+transaction5 = Transaction.new({
+  'value' => 18.80,
+  'merchant_id' => merchant6.id,
+  'transaction_date' => '2017-04-10',
+  'tag_id' => tag4.id
+  })
+
+
   transaction1.save
   transaction2.save
   transaction3.save
+  transaction4.save
+  transaction5.save

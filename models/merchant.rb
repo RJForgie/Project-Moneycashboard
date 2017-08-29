@@ -68,4 +68,10 @@ class Merchant
     return rows.map {|row| Merchant.new(row)}
   end
 
+  def self.names()
+    merchants = Merchant.all
+    names = merchants.map {|merchants| merchants.name}
+    return names
+  end
+
 end

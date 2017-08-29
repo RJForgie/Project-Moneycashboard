@@ -17,7 +17,8 @@ end
 #NEW route
 
 post '/tags/new' do
+  tags = Tag.names
   @tag = Tag.new(params)
-  @tag.save()
+  @tag.save() unless tags.include? @tag.name
   redirect to "/tags/new"
 end
