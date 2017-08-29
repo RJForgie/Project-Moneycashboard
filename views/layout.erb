@@ -6,23 +6,27 @@
 </head>
 <body>
 
-  <ul>
-    <li><a class="active" href="/">Home</a></li>
-    <li><a href="/transactions">All Transactions</a></li>
-    <li><a href="/transactions/new">New Transaction</a></li>
-    <li><a href="/accountsettings/1/edit">Account Settings</a></li>
-    <li><a href="/merchants/new">Add a Merchant</a></li>
-    <li><a href="/tags/new">Add a Tag</a></li>
-    <li><a href="/transactions/reports">Reports</a></li>
-  </ul>
+  <div id="banner">
+    <div id="banner-content">
+    Banner
+    </div>
+  </div>
+  <div id="main-content">
 
-  <div style="margin-left:15%;margin-right:15%;padding:1px 16px;height:1000px;">
-    <h1 class="w3-container w3-teal">Banner</h1>
-<%= yield %>
-<div class="w3-container w3-teal">
+    <ul class="leftmenu">
+      <li><a class="active" href="/">Home</a></li>
+      <li><a href="/transactions">All Transactions</a></li>
+      <li><a href="/transactions/new">New Transaction</a></li>
+      <li><a href="/accountsettings/1/edit">Account Settings</a></li>
+      <li><a href="/merchants/new">Add a Merchant</a></li>
+      <li><a href="/tags/new">Add a Tag</a></li>
+      <li><a href="/transactions/reports">Reports</a></li>
+    </ul>
 
-<h5>Footer</h5>
-  <p>Info</p>
+<div style="margin-left:15%;margin-right:15%;padding:1px 16px;height:1000px;">
+    <h1 class="">Banner</h1>
+      <%= yield %>
+
 </div>
 
   </div>

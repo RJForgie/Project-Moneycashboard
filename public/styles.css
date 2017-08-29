@@ -1,3 +1,6 @@
+
+/*Right sidebar*/
+
 #budget-display {
   position: fixed;
   right: 0;
@@ -5,6 +8,8 @@
   text-align: center;
   /*background-image: url(congruent_pentagon.png);*/
 }
+
+/*All tables*/
 
 #newtable {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -30,10 +35,7 @@
   color: white;
 }
 
-body {
-  margin: 0;
-  text-align: center;
-}
+/*Main body and left sidebar*/
 
 ul {
   list-style-type: none;
@@ -64,7 +66,14 @@ li a:hover:not(.active) {
   color: white;
 }
 
-.button {
+.leftmenu {
+left: 0;
+top: 0;
+}
+
+/*Buttons*/
+
+/*.button {
   background-color: #4CAF50;
   border: none;
   color: white;
@@ -82,9 +91,31 @@ li a:hover:not(.active) {
   background-color: white;
   color: black;
   border: 2px solid #4CAF50;
-}
+}*/
 
-/* The alert message box */
+.button,
+button,
+input[type="submit"],
+input[type="button"] {
+  display: inline-block;
+  height: 38px;
+  padding: 0 30px;
+  color: #555;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 38px;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  cursor: pointer;
+  box-sizing: border-box; }
+
+/* Alert message box */
 .alert {
     padding: 20px;
     background-color: #f44336; /* Red */
@@ -116,12 +147,8 @@ input[type="number"], input[type="date"] {
   padding-bottom: 15px;
 }*/
 
-input[type="email"],
 input[type="number"],
-input[type="search"],
 input[type="text"],
-input[type="tel"],
-input[type="url"],
 input[type="date"],
 textarea,
 select {
@@ -132,3 +159,21 @@ select {
   border-radius: 4px;
   box-shadow: none;
   box-sizing: border-box; }
+
+
+  /*Banner*/
+  div#banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #DDEEEE;
+    width: 100%;
+  }
+  div#banner-content {
+    width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+  }
+  div#main-content {
+    padding-top: 70px;
+  }

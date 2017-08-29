@@ -1,3 +1,12 @@
+<h1>Enter new tag details</h1>
+
+<form action="/tags/new" method="POST">
+
+<label for="tag-field">Tag Name:</label>
+<input id="tag-field" type="text" name="name" required>
+
+<input type="submit" class="button" value="Save tag"/>
+
 <h1>All tags</h1>
 
 <table id="newtable">
@@ -11,13 +20,3 @@
  </tr>
 <% end %>
 </table>
-
-
-<h1>Enter new tag details</h1>
-
-<form action="/tags/new" method="POST">
-
-<label for="tag-field">Tag Name:</label>
-<input id="tag-field" type="text" name="name">
-
-<input type="submit" class="button" value="Save tag"/>

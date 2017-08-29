@@ -1,7 +1,9 @@
 <h1>Budget settings</h1>
 
-
+<div>
 <p>£<%= sprintf("%.2f",@accountsettings.budget_limit) %></p>
+</div>
+
 
 
 
@@ -9,15 +11,23 @@
 
 <form action="/accountsettings/<%= @accountsettings.id %>" method="POST">
 
+<div>
 <label for="budget-limit-field">New budget: </label>
-<input id="budget-limit-field" type="float" name="budget_limit">
+<input id="budget-limit-field" type="number" name="budget_limit">
+</div>
 
+<div>
 <input type="submit" class="button" value="Save changes"/>
+</div>
 
+<div>
 <form method="GET" action="/merchants/new">
     <button class="button" type="submit">Create new Merchant</button>
 </form>
+</div>
 
+<div>
 <form method="GET" action="/tags/new">
     <button class="button" type="submit">Create new Tag</button>
 </form>
+</div>
