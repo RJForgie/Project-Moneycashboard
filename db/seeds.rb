@@ -39,7 +39,7 @@ merchant6.save
 transaction1 = Transaction.new({
   'value' => 60.10,
   'merchant_id' => merchant1.id,
-  'transaction_date' => '2017-06-03',
+  'transaction_date' => '2017-01-03',
   'tag_id' => tag1.id
   })
 
@@ -53,14 +53,14 @@ transaction2 = Transaction.new({
 transaction3 = Transaction.new({
   'value' => 50.80,
   'merchant_id' => merchant3.id,
-  'transaction_date' => '2017-04-22',
+  'transaction_date' => '2017-02-22',
   'tag_id' => tag3.id
   })
 
 transaction4 = Transaction.new({
   'value' => 18.80,
   'merchant_id' => merchant5.id,
-  'transaction_date' => '2017-04-10',
+  'transaction_date' => '2017-03-10',
   'tag_id' => tag3.id
   })
 
@@ -74,16 +74,79 @@ transaction5 = Transaction.new({
 transaction6 = Transaction.new({
   'value' => 60.00,
   'merchant_id' => merchant4.id,
-  'transaction_date' => '2017-07-10',
+  'transaction_date' => '2017-05-10',
   'tag_id' => tag4.id
   })
 
 transaction7 = Transaction.new({
   'value' => 21.00,
   'merchant_id' => merchant1.id,
-  'transaction_date' => '2017-08-10',
+  'transaction_date' => '2017-05-10',
   'tag_id' => tag1.id
   })
+
+transaction8 = Transaction.new({
+  'value' => 41.00,
+  'merchant_id' => merchant4.id,
+  'transaction_date' => '2017-06-24',
+  'tag_id' => tag5.id
+  })
+
+transaction8 = Transaction.new({
+  'value' => 80.00,
+  'merchant_id' => merchant6.id,
+  'transaction_date' => '2017-06-24',
+  'tag_id' => tag4.id
+  })
+
+transaction9 = Transaction.new({
+  'value' => 29.98,
+  'merchant_id' => merchant1.id,
+  'transaction_date' => '2017-06-25',
+  'tag_id' => tag1.id
+  })
+
+transaction10 = Transaction.new({
+  'value' => 67.24,
+  'merchant_id' => merchant5.id,
+  'transaction_date' => '2017-06-26',
+  'tag_id' => tag3.id
+  })
+
+transaction11 = Transaction.new({
+  'value' => 15.04,
+  'merchant_id' => merchant2.id,
+  'transaction_date' => '2017-06-28',
+  'tag_id' => tag2.id
+  })
+
+transaction12 = Transaction.new({
+  'value' => 560.00,
+  'merchant_id' => merchant6.id,
+  'transaction_date' => '2017-07-14',
+  'tag_id' => tag4.id
+  })
+
+transaction13 = Transaction.new({
+  'value' => 52.00,
+  'merchant_id' => merchant4.id,
+  'transaction_date' => '2017-07-24',
+  'tag_id' => tag5.id
+  })
+
+transaction14 = Transaction.new({
+  'value' => 52.00,
+  'merchant_id' => merchant1.id,
+  'transaction_date' => '2017-07-25',
+  'tag_id' => tag1.id
+  })
+
+  transaction15 = Transaction.new({
+    'value' => 64.00,
+    'merchant_id' => merchant2.id,
+    'transaction_date' => '2017-08-04',
+    'tag_id' => tag2.id
+    })
 
 
 
@@ -94,3 +157,11 @@ transaction7 = Transaction.new({
   transaction5.save
   transaction6.save
   transaction7.save
+  transaction8.save
+  transaction9.save
+  transaction10.save
+  transaction11.save
+  transaction12.save
+  transaction13.save
+  transaction14.save
+  transaction15.save

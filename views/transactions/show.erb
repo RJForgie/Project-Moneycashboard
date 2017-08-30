@@ -1,4 +1,4 @@
-<h1>Transaction Details</h1>
+<h2>Transaction Details</h1>
 
 <p>Value: <%= @transaction.value %></p>
 
@@ -16,11 +16,10 @@
   <% end %>
 
 <% end %>
-<td><form action="/transactions/<%= @transaction.id %>/edit" method="get">
+<form action="/transactions/<%= @transaction.id %>/edit" method="get">
   <input type="submit" class="button" value="Edit Transaction"/>
-</form></td>
+</form>
 
-<td><form action="/transactions/<%= @transaction.id %>/delete" method="POST">
-  <input type="submit" class="button" value="Remove transaction"/>
-</form></td>
-</tr>
+<form action="/transactions/<%= @transaction.id %>/delete" method="POST">
+  <input type="submit" class="button" value="Delete transaction"/>
+</form>

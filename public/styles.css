@@ -1,8 +1,27 @@
+/*General*/
+
+body {
+  font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	line-height: 25px;
+}
+
+h1 {
+	font-family: 'Arvo', Georgia, Times, serif;
+	font-size: 40px;
+	line-height: 5px;
+}
+
+h2 {
+	font-family: 'Arvo', Georgia, Times, serif;
+	font-size: 28px;
+	line-height: 5px;
+}
+
 
 /*All tables*/
 
 .newtable {
-  /*font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;*/
   border-collapse: collapse;
   width: 100%;
   margin-bottom: 50px;
@@ -22,7 +41,6 @@
   padding-top: 8px;
   padding-bottom: 8px;
   text-align: center;
-  /*background-color: #4CAF50;*/
   background-color: #0F183E;
   color: white;
 }
@@ -36,7 +54,6 @@ ul#budget-display {
   right: 0;
   top: 0;
   text-align: center;
-  /*background-image: url(congruent_pentagon.png);*/
 }
 
 ul#secondnav, ul#budget-display {
@@ -44,7 +61,6 @@ ul#secondnav, ul#budget-display {
   margin: 0;
   padding: 0;
   width: 15%;
-  /*background-color: #f1f1f1;*/
   position: fixed;
   height: 100%;
   overflow: auto;
@@ -55,18 +71,16 @@ ul#secondnav, ul#budget-display {
 
 ul#secondnav li a, ul#budget-display li a {
   display: block;
-  /*color: #000;*/
   padding: 8px 16px;
   text-decoration: none;
 }
 
 ul#secondnav li a.active{
-  /*background-color: #4CAF50;*/
   color: white;
 }
 
 ul#secondnav li a:hover:not(.active) {
-  background-color: #555;
+  background-color: #0F183E;
   color: white;
 }
 
@@ -76,6 +90,7 @@ top: 0;
 }
 
 /* localnav */
+
 ul#localnav {
   list-style-type: none;
   margin: 0;
@@ -163,8 +178,9 @@ select {
   div#banner-content {
     width: 800px;
     margin: 0 auto;
-    padding: 10px;
-    color: white
+    padding: 5px;
+    color: white;
+    /*text-align: center;*/
 
   }
   div#main-content {
@@ -180,13 +196,17 @@ select {
     width: 100%;
     height: 30px;
   }
-  div#banner-content {
+  div#footer-content {
     width: 800px;
     margin: 0 auto;
-    padding: 10px;
-    color: white
+    padding: 3px;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+
 
   }
+
   div#main-content {
     padding-top: 70px;
   }
@@ -198,14 +218,12 @@ select {
     margin: 10px;
 }
 
-body {
-  font-family: 'PT Sans', Helvetica, Arial, sans-serif;
-	font-size: 16px;
-	line-height: 25px;
+.form-element{
+  display: flex;
+  flex-direction: column;
 }
 
-h1 {
-	font-family: 'Arvo', Georgia, Times, serif;
-	font-size: 40px;
-	line-height: 5px;
+.newform{
+  flex: 1;
+  display:flex;
 }

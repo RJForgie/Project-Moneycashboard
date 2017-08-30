@@ -5,6 +5,8 @@
   <link rel="stylesheet" href = "/styles.css" />
   <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 
@@ -16,24 +18,24 @@
 
   <div id="footer">
     <div id="footer-content">
-      <h1></h1>
+      <!-- <p>&copy; RJF Enterprises 2017</p> -->
     </div>
   </div>
 
   <div id="main-content">
 
     <ul id="secondnav">
-      <li><a class="active" href="/">Home</a></li>
-      <li><a href="/transactions">All Transactions</a></li>
-      <li><a href="/transactions/new">New Transaction</a></li>
-      <li><a href="/accountsettings/1/edit">Account Settings</a></li>
-      <li><a href="/merchants/new">Merchant Manager</a></li>
-      <li><a href="/tags/new">Tag Manager</a></li>
-      <li><a href="/transactions/reports">Reports</a></li>
+      <span style="display:block; height: 100px;"></span>
+      <li><a href="/">Home  <i class="fa fa-home fa-lg" aria-hidden="true"></i></a></li>
+      <li><a href="/transactions">All Transactions  <i class="fa fa-gbp fa-lg" aria-hidden="true"></i></a></li>
+      <li><a href="/transactions/new">New Transaction  <i class="fa fa-plus fa-lg" aria-hidden="true"></i></a></li>
+      <li><a href="/accountsettings/1/edit">Account Settings  <i class="fa fa-cog fa-lg" aria-hidden="true"></i></a></li>
+      <li><a href="/merchants/new">Merchant Manager  <i class="fa fa-briefcase fa-lg" aria-hidden="true"></i></a></li>
+      <li><a href="/tags/new">Tag Manager  <i class="fa fa-briefcase fa-lg" aria-hidden="true"></i></a></li>
+      <li><a href="/transactions/reports">Reports <i class="fa fa-pie-chart fa-lg" aria-hidden="true"></i></a></li>
     </ul>
 
 <div style="margin-left:15%;margin-right:15%;padding:1px 16px;height:1000px;">
-    <h1 class=""></h1>
       <%= yield %>
 
 </div>

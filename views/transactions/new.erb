@@ -1,50 +1,46 @@
 
-<table>
-<form method="GET" action="/merchants/new">
-    <button class="button" type="submit">Create new Merchant</button>
-</form>
+<h2>Enter new transaction details</h1>
 
-<form method="GET" action="/tags/new">
-    <button class="button" type="submit">Create new Tag</button>
-</form>
-</table>
-
-<h1>Enter new transaction details</h1>
-
-<div class="form-element">
 <form action="/transactions" method="POST">
+  <div class="form-element">
 
-<div class="newform">
-<label for="value-field">Value: £</label>
-<input id="value-field" type="number" name="value" step="0.01" required>
-</div>
+    <div class="newform">
+      <label for="value-field">Value: £</label>
+      <input id="value-field" type="number" name="value" step="0.01" required>
+    </div>
 
-<div class="newform">
-<label for="merchant-select"> Select a Merchant:</label>
-<select id="merchant-select" name="merchant_id">
-  <% for merchant in @merchants do%>
-  <option value= <%= merchant.id %>><%= merchant.name %></option>
-  <% end %>
-</select>
-</div>
+    <div class="newform">
+      <label for="merchant-select"> Select a Merchant:</label>
+      <select id="merchant-select" name="merchant_id">
+        <% for merchant in @merchants do%>
+        <option value= <%= merchant.id %>><%= merchant.name %></option>
+        <% end %>
+      </select>
+      <form method="GET" action="/merchants/new">
+          <button class="button" type="submit">Create new Merchant</button>
+      </form>
+    </div>
 
-<div class="newform">
-<label for="value-field">Date: </label>
-<input id="value-field" type="date" name="transaction_date" required
-  value="<%= Date.today.strftime('%Y-%m-%d') %>">
-</div>
+    <div class="newform">
+      <label for="value-field">Date: </label>
+      <input id="value-field" type="date" name="transaction_date" required
+        value="<%= Date.today.strftime('%Y-%m-%d') %>">
+    </div>
 
-<div class= "newform">
-<label for="tag-select"> Select a Tag:</label>
-<select id="tag-select" name="tag_id">
-  <% for tag in @tags do%>
-  <option value= <%= tag.id %>><%= tag.name %></option>
-  <% end %>
-</select>
-</div>
+    <div class= "newform">
+      <label for="tag-select"> Select a Tag:</label>
+      <select id="tag-select" name="tag_id">
+        <% for tag in @tags do%>
+        <option value= <%= tag.id %>><%= tag.name %></option>
+        <% end %>
+      </select>
+      <form method="GET" action="/tags/new">
+          <button class="button" type="submit">Create new Tag</button>
+      </form>
+    </div>
 
-<div class="newform">
-<input type="submit" class="button" value="Save transaction"/>
+    <div class="newform">
+      <input type="submit" class="button" value="Save transaction"/>
+    </div>
+  </div>
 </form>
-</div>
-</div>
