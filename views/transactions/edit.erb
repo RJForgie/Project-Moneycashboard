@@ -2,7 +2,7 @@
 <form action="/transactions/<%= @transaction.id %>" method="POST">
 
   <label for="value-field">Value: £</label>
-  <input id="value-field" type="float" name="value" value="<%= @transaction.value %>" step="0.01" required>
+  <input id="value-field" type="number" name="value" value="<%= @transaction.value %>" step="0.01" required>
 
   <label for="merchant-select">Select a merchant:</label>
   <select id="merchant-select" name="merchant_id">
@@ -17,7 +17,7 @@
 
 
   <label for="transaction-date-field">Date:</label>
-  <input id="transaction-date-field" type="date" name="transaction_date" value="<%= @transaction.transaction_date %>">
+  <input id="transaction-date-field" type="date" name="transaction_date" value="<%= @transaction.transaction_date %>" required>
 
   <label for="tag-select">Select a tag:</label>
   <select id="tag-select" name="tag_id">
@@ -29,6 +29,8 @@
      <% end %>
      <% end %>
   </select>
+
+  <span style="display:block; height: 25px;"></span>
 
   <input type="submit" class="button" value="Save changes"/>
 </form>

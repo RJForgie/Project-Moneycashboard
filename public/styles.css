@@ -122,7 +122,11 @@ input[type="button"] {
   border-radius: 4px;
   border: 1px solid #bbb;
   cursor: pointer;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  margin-left: 10px;
+
+}
+
 
 #tablebutton {
   height: 25px;
@@ -203,8 +207,6 @@ select {
     color: white;
     text-align: center;
     font-size: 16px;
-
-
   }
 
   div#main-content {
@@ -226,4 +228,9 @@ select {
 .newform{
   flex: 1;
   display:flex;
+}
+
+.reportnav {
+  margin-top: 20px;
+  font-size: 20px;
 }

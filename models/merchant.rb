@@ -70,7 +70,7 @@ class Merchant
 
   def self.names()
     merchants = Merchant.all
-    names = merchants.map {|merchants| merchants.name}
+    names = merchants.map {|merchants| merchants.name }
     return names
   end
 
