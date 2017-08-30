@@ -1,15 +1,11 @@
 <h2>Enter new merchant details</h1>
 
 <form action="/merchants/new" method="POST">
-
-<label for="merchant-field">Tag Name:</label>
-<input id="merchant-field" type="text" name="name" required>
-
+  <label for="merchant-field">Tag Name:</label>
+  <input id="merchant-field" type="text" name="name" required>
 <input type="submit" class="button" value="Save merchant"/>
 
-
 <h2>All merchants</h1>
-
 
 <table class="newtable">
   <tr>
@@ -17,8 +13,8 @@
   </tr>
 
 <% for merchant in @merchants%>
- <tr>
-   <td><%= merchant.name %></td>
- </tr>
+   <tr>
+     <td><%= merchant.name %></td>
+   </tr>
 <% end %>
 </table>

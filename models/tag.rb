@@ -24,8 +24,8 @@ class Tag
 
   def update()
     sql = '
-    UPDATE tags SET (name) = $1
-    WHERE id = $2'
+      UPDATE tags SET (name) = $1
+      WHERE id = $2'
     values = [@name, @id]
     Sqlrunner.run(sql, values)
   end
@@ -41,7 +41,8 @@ class Tag
 
   def self.find(id)
     sql = '
-      SELECT * FROM tags WHERE id = $1'
+      SELECT * FROM tags
+      WHERE id = $1'
     values = [id]
     tag = SqlRunner.run(sql, values)
     result = Tag.new(tag.first)
@@ -49,16 +50,18 @@ class Tag
   end
 
   def self.delete(id)
-    sql = 'DELETE FROM tags WHERE id = $1;'
+    sql = '
+      DELETE FROM tags
+      WHERE id = $1;'
     values = [id]
     SqlRunner.run(sql, values)
   end
 
   def transaction_total()
     sql = '
-    SELECT SUM(value)
-    FROM transactions
-    WHERE tag_id = $1'
+      SELECT SUM(value)
+      FROM transactions
+      WHERE tag_id = $1'
     values = [@id]
     result = SqlRunner.run(sql, values).first['sum'].to_f
     return result
@@ -73,8 +76,5 @@ class Tag
     names = tags.map {|tags| tags.name}
     return names
   end
-
-
-
 
 end

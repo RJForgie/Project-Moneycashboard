@@ -1,23 +1,19 @@
 <h2>Budget settings</h1>
 
 <div>
-<p>£<%= sprintf("%.2f",@accountsettings.budget_limit) %></p>
+  <p>£<%= sprintf("%.2f",@accountsettings.budget_limit) %></p>
 </div>
-
-
-
 
 <h2>Update budget</h1>
 
 <form action="/accountsettings/<%= @accountsettings.id %>" method="POST">
+  <div>
+    <label for="budget-limit-field">New budget: </label>
+    <input id="budget-limit-field" type="number" name="budget_limit" step="0.01" required>
+  </div>
 
-<div>
-<label for="budget-limit-field">New budget: </label>
-<input id="budget-limit-field" type="number" name="budget_limit" step="0.01" required>
-</div>
+<span style="display:block; height: 25px;"></span>
 
-<span style="display:block; height: 40px;"></span>
-
-<div>
-<input type="submit" class="button" value="Save changes"/>
-</div>
+  <div>
+    <input type="submit" class="button" value="Save changes"/>
+  </div>

@@ -27,7 +27,6 @@ class Month
         "total" => "0"
       })
     }
-
     return result
   end
 

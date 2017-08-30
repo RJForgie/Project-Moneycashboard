@@ -1,10 +1,8 @@
 <h2>Enter new tag details</h1>
 
 <form action="/tags/new" method="POST">
-
-<label for="tag-field">Tag Name:</label>
-<input id="tag-field" type="text" name="name" required>
-
+  <label for="tag-field">Tag Name:</label>
+  <input id="tag-field" type="text" name="name" required>
 <input type="submit" class="button" value="Save tag"/>
 
 <h2>All tags</h1>
@@ -15,8 +13,8 @@
   </tr>
 
 <% for tag in @tags%>
- <tr>
-   <td><%= tag.name %></td>
- </tr>
+   <tr>
+     <td><%= tag.name %></td>
+   </tr>
 <% end %>
 </table>

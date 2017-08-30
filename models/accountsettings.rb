@@ -24,7 +24,8 @@ class AccountSettings
 
   def update()
     sql = '
-      UPDATE accountsettings SET (budget_limit)
+      UPDATE accountsettings
+      SET (budget_limit)
       = ($1)
       WHERE id = $2;'
       values = [@budget_limit, @id]
@@ -33,7 +34,8 @@ class AccountSettings
 
   def self.find(id)
     sql = '
-      SELECT * FROM accountsettings WHERE id = $1'
+      SELECT * FROM accountsettings
+      WHERE id = $1'
     values = [id]
     accountsetting = SqlRunner.run(sql, values)
     result = AccountSettings.new(accountsetting.first)

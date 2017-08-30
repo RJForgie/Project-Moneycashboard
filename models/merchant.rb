@@ -24,7 +24,8 @@ class Merchant
 
   def update()
     sql = '
-      UPDATE merchant SET (name) = $1
+      UPDATE merchant
+      SET (name) = $1
       WHERE id = $2'
     values = [@name, @id]
     Sqlrunner.run(sql, values)
@@ -41,7 +42,8 @@ class Merchant
 
   def self.find(id)
     sql = '
-      SELECT * FROM merchants WHERE id = $1'
+      SELECT * FROM merchants
+      WHERE id = $1'
     values = [id]
     merchant = SqlRunner.run(sql, values)
     result = Merchant.new(merchant.first)
@@ -49,16 +51,18 @@ class Merchant
   end
 
   def self.delete(id)
-    sql = 'DELETE FROM merchants WHERE id = $1;'
+    sql = '
+      DELETE FROM merchants
+      WHERE id = $1;'
     values = [id]
     SqlRunner.run(sql, values)
   end
 
   def transaction_total()
     sql = '
-    SELECT SUM(value)
-    FROM transactions
-    WHERE merchant_id = $1'
+      SELECT SUM(value)
+      FROM transactions
+      WHERE merchant_id = $1'
     values = [@id]
     result = SqlRunner.run(sql, values).first['sum'].to_f
     return result
