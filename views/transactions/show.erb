@@ -1,6 +1,6 @@
 <h2>Transaction Details</h1>
 
-<p>Value: <%= @transaction.value %></p>
+<p>Value: £<%= @transaction.value %></p>
 
 <% for merchant in @merchants do %>
   <% if merchant.id == @transaction.merchant_id %>
