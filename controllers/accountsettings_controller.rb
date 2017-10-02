@@ -1,6 +1,6 @@
 require('sinatra')
-# require('sinatra/contrib/all')
-require('pry-byebug')
+require('sinatra/contrib/all') if development?
+# require('pry-byebug')
 require_relative('../models/tag.rb')
 require_relative('../models/transaction.rb')
 require_relative('../models/merchant.rb')
