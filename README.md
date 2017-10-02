@@ -4,4 +4,4 @@ Project completed as part of CodeClan 16 week intensive Software Development boo
 
 ## Live Demo
 
-Please check out the live [demo](http://dashboard.heroku.com/apps/damp-brook-23109/settings)
+Please check out the live [demo](http://damp-brook-23109.herokuapp.com/)
