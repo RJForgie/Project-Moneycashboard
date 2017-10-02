@@ -6,7 +6,7 @@ require_relative('../models/transaction.rb')
 require_relative('../models/merchant.rb')
 require_relative('../models/accountsettings.rb')
 require_relative('../models/month.rb')
-also_reload("..models/*")
+# also_reload("..models/*")
 
 
   #INDEX route
