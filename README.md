@@ -27,4 +27,4 @@ Any other ideas you might come up with
 
 ## Live Demo
 
-Please check out the live [demo](http://damp-brook-23109.herokuapp.com/)
+Please check out the live [demo](https://ruby-money-cash-board.herokuapp.com/)
